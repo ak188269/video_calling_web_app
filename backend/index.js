@@ -14,7 +14,7 @@ const server = app.listen(PORT,()=>{
 })
 
 const io = socket(server,{
-    cors:["http://localhost:3000"]
+    cors:["*"]
 });
 
 
