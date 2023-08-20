@@ -1,0 +1,11 @@
+#home-wrapper{
+    display: flex;
+    align-items:center;
+    gap: 1rem;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.video{
+    border: 2px solid black;
+}
