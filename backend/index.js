@@ -8,8 +8,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
-
-app.use(express.static(path.join(__dirname,"../frontend/dist")));
+console.log(__dirname);
+app.use(express.static(path.join(__dirname,"/dist")));
 app.get('/root', (req, res) =>{
     res.send("Welcome to video calling app");
 })
