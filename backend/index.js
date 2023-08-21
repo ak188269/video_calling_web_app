@@ -1,11 +1,12 @@
 const express = require('express');
 require("dotenv").config();
 const socket = require('socket.io');
+const cors = require('cors');
 const {PORT} = process.env;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
-app.use(require("cors")({origin:"*"}))
+app.use(cors())
 
 app.get('/', (req, res) =>{
     res.send("Welcome to video calling app");
@@ -20,8 +21,10 @@ const server = app.listen(PORT,()=>{
 })
 
 const io = socket(server,{
-    cors:["*"]
+    cors:true
 });
+
+io.use(cors());
 
 
 
