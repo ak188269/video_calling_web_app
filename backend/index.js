@@ -5,6 +5,7 @@ const {PORT} = process.env;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
+app.use(require("cors")())
 
 app.get('/', (req, res) =>{
     res.send("Welcome to video calling app");
