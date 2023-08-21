@@ -9,7 +9,7 @@ const Home = () => {
   const socket  = useSocket();
   useEffect(()=>{
 
-    getStream();
+    // getStream();
     socket.on("connected",onConnection)
     socket.on("incoming-call",onIncomingCall);
     socket.on("received-call",receivedCall);
@@ -20,6 +20,9 @@ const Home = () => {
       socket.emit("ice-candidate",e.candidate);
       }
     }
+
+    fetch("https://video-calling-web-app.vercel.app/").then((data)=>data.text()).then(data=>{console.log(data)}).catch((err)=>{console.log("error ",err)});
+    
 
     return () => {
       socket.off("connected",onConnection)

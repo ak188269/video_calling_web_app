@@ -10,6 +10,11 @@ app.use(require("cors")({origin:"*"}))
 app.get('/', (req, res) =>{
     res.send("Welcome to video calling app");
 })
+
+app.post("/post", (req, res) =>{
+  return  res.json({sucess:true,message:"it was successful"});
+})
+
 const server = app.listen(PORT,()=>{
     console.log(`listening on ${PORT}`);
 })
