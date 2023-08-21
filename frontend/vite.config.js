@@ -7,6 +7,6 @@ export default defineConfig({
   server:{
     open:true,
     port: 3000,
-    proxy : "http://localhost:8080"
+    proxy : "https://video-calling-web-app.vercel.app"
   }
 })
