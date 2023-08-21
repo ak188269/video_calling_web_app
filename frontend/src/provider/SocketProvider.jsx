@@ -10,7 +10,7 @@ export const  useSocket = () =>{
 }
 
  const SocketProvider = (props) => {
-    const socket = useMemo(() => io(import.meta.env.VITE_SERVER_URL,{
+    const socket = useMemo(() => io("/",{
         auth:{
             name : "someone"
         }
